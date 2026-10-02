@@ -42,7 +42,7 @@ cms_project/
 ├── database/
 │   ├── factories/                # UserFactory.php
 │   ├── migrations/               # 21 Berkas migrasi database relasional
-│   └── seeders/                  # DatabaseSeeder.php (Master data baseline)
+│   └── seeders/                  # DatabaseSeeder.php (Cleaned for production)
 ├── public/                       # Entry point (index.php), aset build Vite, storage symlink
 ├── resources/
 │   ├── css/                      # app.css (Tailwind CSS v4 entrypoint)

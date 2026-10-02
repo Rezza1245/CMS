@@ -42,13 +42,13 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-### 2.2 Migrasi Database & Seeding
+### 2.2 Migrasi Database & Inisialisasi Akun Super Admin
 ```bash
 # Jalankan seluruh migrasi skema tabel
 php artisan migrate
 
-# Jalankan seeder data awal (Template default, Dinas, Akun Super Admin & Admin Dinas)
-php artisan db:seed
+# Buat akun Super Admin pertama secara aman & interaktif
+php artisan make:super-admin
 ```
 
 ### 2.3 Menjalankan Server Pengembangan
@@ -64,18 +64,13 @@ npm run dev
 
 Aplikasi dapat diakses melalui browser pada:  
 - **Portal CMS**: `http://127.0.0.1:8000/login`
-- **Website Publik Diskominfo**: `http://127.0.0.1:8000/site/diskominfo`
-- **Website Publik Dinas Pariwisata**: `http://127.0.0.1:8000/site/disparta`
 
 ---
 
-## 3. Kredensial Akun Default (Hasil Seeder)
+## 3. Manajemen Akun Pengguna
 
-| Role | Nama Pengguna | Alamat Email | Kata Sandi | Akses Ruang Lingkup |
-|---|---|---|---|---|
-| **Super Admin** | Super Admin Diskominfo | `superadmin@batukota.go.id` | `password123` | Konfigurasi sistem global, Template Builder, Manajemen User & Website Dinas |
-| **Admin Kedinasan** | Admin Diskominfo Bidang IKP | `admin.ikp@batukota.go.id` | `password123` | Pengelolaan konten website Diskominfo Kota Batu |
-| **Admin Kedinasan** | Admin Dinas Pariwisata | `admin.pariwisata@batukota.go.id` | `password123` | Pengelolaan konten website Dinas Pariwisata Kota Batu |
+1. **Super Admin**: Dibuat melalui CLI perintah aman `php artisan make:super-admin` (kata sandi diinput interaktif tanpa tersimpan di repositori Git).
+2. **Admin Kedinasan**: Dibuat dan dikelola secara terpusat oleh Super Admin melalui panel manajemen pengguna di dalam dashboard CMS (`/admin/users`).
 
 ---
 
